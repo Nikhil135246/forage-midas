@@ -2,6 +2,14 @@ general:
   kafka-topic: trader-updates
 
 spring:
+  h2:
+    console:
+      enabled: true
+    datasource:
+      url: jdbc:h2:mem:testdb
+    jpa:
+      hibernate:
+        ddl-auto: update
   kafka:
     producer:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
